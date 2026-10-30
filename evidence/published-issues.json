@@ -1,0 +1,16 @@
+[
+  {
+    "cause": "parser",
+    "title": "Shared date parser swaps day and month for day-first tenants (379 reports from #4471)",
+    "bodyFile": "tickets/parser.md",
+    "count": 379,
+    "url": "https://github.com/timkrase/mega-s01e03-what-it-shows/issues/1"
+  },
+  {
+    "cause": "hint",
+    "title": "Booking-v3 date hint contradicts day-first tenant parsing (33 reports from #4471)",
+    "bodyFile": "tickets/hint.md",
+    "count": 33,
+    "url": "https://github.com/timkrase/mega-s01e03-what-it-shows/issues/2"
+  }
+]

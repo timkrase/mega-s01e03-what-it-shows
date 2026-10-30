@@ -14,6 +14,8 @@ The data ends on 4 October 2026. The review date is 30 October 2026.
 
 ## Deliverables
 
+- [Published parser issue #1](https://github.com/timkrase/mega-s01e03-what-it-shows/issues/1).
+- [Published hint issue #2](https://github.com/timkrase/mega-s01e03-what-it-shows/issues/2).
 - [Parser issue draft](tickets/parser.md), covering 379 report IDs.
 - [Hint issue draft](tickets/hint.md), covering 33 report IDs.
 - [Computed analysis](evidence/analysis.json), including complete report-ID membership and tenant records.
