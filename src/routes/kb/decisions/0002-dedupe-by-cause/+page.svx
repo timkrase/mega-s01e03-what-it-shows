@@ -4,7 +4,7 @@ title: '0002 · Split #4471 and deduplicate by cause'
 owner: Tim Krase and Codex
 status: proposed
 reviewed: '2026-10-30'
-signature: 'Tim Krase / Codex / S01E03 / what it shows'
+signature: 'v1.eyJzdWIiOiIxMzg2IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTMzNzQ2NDAsImV4cCI6MTc5MzQ2MTA0MH0.xjxRPOvRaeHjBJUzf9bmEgIqtLAq0B1LPSC1G9NqhOk'
 ---
 
 <script>

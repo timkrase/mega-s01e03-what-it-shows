@@ -1,6 +1,12 @@
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { withReview } from './load-review.mjs';
+
+const source = await readFile('src/routes/kb/decisions/0002-dedupe-by-cause/+page.svx', 'utf8');
+const signature = source.match(/^signature: '([^']+)'$/m)?.[1];
+assert.ok(signature);
+const expectedRef = await withReview(({ stamp }) => stamp.deskRef(signature));
 
 const browser = await chromium.launch({ headless: true });
 const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
@@ -13,7 +19,7 @@ try {
   assert.equal(await firstTable.locator('tbody tr').count(), 2);
   assert.equal(await firstTable.locator('tbody tr').nth(0).locator('td').nth(1).innerText(), '379');
   assert.equal(await firstTable.locator('tbody tr').nth(1).locator('td').nth(1).innerText(), '33');
-  assert.equal(await page.locator('.stamp').innerText(), 'desk ref DR-VSV8-MJN6');
+  assert.equal(await page.locator('.stamp').innerText(), `desk ref ${expectedRef}`);
   assert.equal(await page.locator('.verdict').innerText(), 'different causes — keep apart');
   await page.getByRole('combobox', { name: 'tenant', exact: true }).nth(0).selectOption('kettle.books');
   await page.waitForFunction(() => document.querySelector('.verdict')?.textContent === 'same cause — merge');

@@ -8,6 +8,10 @@ or its [standalone rendered reading copy](rendered/4471-review.html). The readin
 the actual Svelte prerendered HTML and compiled CSS. Its tables, graph, and desk ref were produced
 by the components. The full static site in `build/` also includes the working interactive explorer.
 
+The review's frontmatter uses the course-issued signature exactly as provided by `start-challenge`.
+Its owner field names the authors. `RenderStamp` derives the desk ref from that signature at render time.
+The course says the signature remains valid on the page after its ticket expires.
+
 The original export files remain unchanged. The new review proposes replacing the old accepted
 subject-only decision. It does not claim that the desk adopted the proposal.
 The data ends on 4 October 2026. The review date is 30 October 2026.
