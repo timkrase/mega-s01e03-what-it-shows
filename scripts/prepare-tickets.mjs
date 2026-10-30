@@ -8,6 +8,7 @@ await withReview(async ({ review, locales }) => {
   const descriptions = {
     parser: {
       title: 'Shared date parser swaps day and month for day-first tenants',
+      resolution: 'The course engineering update reports #4471 closed on 5 October 2026. The parser is FIXED: fix(dates): parse dd/mm for eu locales. GitHub issue #1 is closed as completed. This is a course-reported production outcome, not a production test performed from this export.',
       example: 'R-41200',
       scope: 'Day-first tenants using app or email, plus booking-v2 form reports. App and email from booking-v3 tenants also use this path.',
       steps: [
@@ -26,6 +27,7 @@ await withReview(async ({ review, locales }) => {
     },
     hint: {
       title: 'Booking-v3 date hint contradicts day-first tenant parsing',
+      resolution: "The course engineering update reports #4471 closed on 5 October 2026. The hint issue is WON'T FIX because the booking-v3 form was retired. GitHub issue #2 is closed as not planned. Retirement is different from repairing the hint. The acceptance checks below record the investigation's original proposed fix criteria.",
       example: 'R-41230',
       scope: 'Form reports from Alder Physio, Copper Studio, and Pale Harbour, which run booking-v3 with day-first tenant locales. App and email reports from these tenants are excluded from this group.',
       steps: [
@@ -56,7 +58,13 @@ await withReview(async ({ review, locales }) => {
       '',
       `Covers **${group.reports.length} distinct reports** merged into source ticket #4471, from ${group.firstSeen} through ${group.lastSeen}.`,
       '',
-      'This is a defect ticket derived from the MEGA.dev course support export. It is not a claim that a production fix was shipped.',
+      "This ticket records the MEGA.dev course support export and the course's later engineering update.",
+      '',
+      '## Course-reported resolution',
+      '',
+      description.resolution,
+      '',
+      'Source: [the current engineering update](https://hq.mega.dev/challenges/what-it-shows).',
       '',
       '## Scope and evidence',
       '',

@@ -9,8 +9,13 @@ the actual Svelte prerendered HTML and compiled CSS. Its tables, graph, and desk
 by the components. The full static site in `build/` also includes the working interactive explorer.
 
 The original export files remain unchanged. The new review proposes replacing the old accepted
-subject-only decision. It does not claim that the desk adopted the proposal or that production fixes shipped.
+subject-only decision. It does not claim that the desk adopted the proposal.
 The data ends on 4 October 2026. The review date is 30 October 2026.
+
+After the first submission, the challenge page published an engineering update: #4471 closed on
+5 October 2026. The parser was fixed, so issue #1 is closed as completed. The booking-v3 form was
+retired, so the hint issue #2 is closed as not planned. These are course-reported outcomes.
+The production fixes have not been independently tested from this export.
 
 ## Deliverables
 

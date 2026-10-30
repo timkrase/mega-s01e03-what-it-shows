@@ -2,7 +2,13 @@
 
 Covers **379 distinct reports** merged into source ticket #4471, from 2026-04-01 through 2026-10-04.
 
-This is a defect ticket derived from the MEGA.dev course support export. It is not a claim that a production fix was shipped.
+This ticket records the MEGA.dev course support export and the course's later engineering update.
+
+## Course-reported resolution
+
+The course engineering update reports #4471 closed on 5 October 2026. The parser is FIXED: fix(dates): parse dd/mm for eu locales. GitHub issue #1 is closed as completed. This is a course-reported production outcome, not a production test performed from this export.
+
+Source: [the current engineering update](https://hq.mega.dev/challenges/what-it-shows).
 
 ## Scope and evidence
 

@@ -1,0 +1,20 @@
+{
+  "source": "https://hq.mega.dev/challenges/what-it-shows",
+  "observedOn": "2026-10-30",
+  "heading": "NEW · DESK UPDATE: engineering update",
+  "sourceTicket": "#4471",
+  "closedOn": "2026-10-05",
+  "parser": {
+    "outcome": "FIXED",
+    "change": "fix(dates): parse dd/mm for eu locales",
+    "githubIssue": 1,
+    "stateReason": "completed"
+  },
+  "hint": {
+    "outcome": "WON'T FIX",
+    "reason": "booking-v3 form retired",
+    "githubIssue": 2,
+    "stateReason": "not_planned"
+  },
+  "provenance": "Read from the signed-in course page through Chrome accessibility after the course rejected closing both tickets as completed. These are course-reported outcomes, not a test of production code."
+}

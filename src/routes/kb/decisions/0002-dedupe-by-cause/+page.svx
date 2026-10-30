@@ -26,9 +26,20 @@ does not match the report groups below. This proposal replaces the subject-only 
 [decision 0001](/kb/decisions/0001-dedupe-by-subject/). That accepted record remains unchanged.
 
 <Callout kind="warn">
-This is a proposal for the support desk. It does not say that engineering shipped either fix.
-The export ends on 4 October 2026. Recheck new reports before applying its counts to the live queue.
+This triage policy is a proposal for the support desk. The report export ends on 4 October 2026.
+The course has since published the engineering outcomes below. Keep those outcomes separate from the historical report counts.
 </Callout>
+
+## Engineering update after the export
+
+The [challenge page](https://hq.mega.dev/challenges/what-it-shows) now reports that #4471 closed on 5 October 2026.
+The parser is **fixed**, with the change described as `fix(dates): parse dd/mm for eu locales`.
+[Parser ticket #1](https://github.com/timkrase/mega-s01e03-what-it-shows/issues/1) is closed as completed.
+
+The hint issue is **won't fix** because the `booking-v3` form was retired.
+[Hint ticket #2](https://github.com/timkrase/mega-s01e03-what-it-shows/issues/2) is closed as not planned.
+Retiring the form does not mean its hint was repaired. These outcomes come from the course's engineering update,
+not from testing production code in this export.
 
 ## Two problems were merged together
 
@@ -36,8 +47,9 @@ The export ends on 4 October 2026. Recheck new reports before applying its count
   <CauseTable ticket={4471} />
 </div>
 
-The parser group owns #4471 because it is the largest group. The hint group needs a separate ticket.
-The submitted GitHub issues document each problem separately, with report IDs and counts.
+The parser group owns #4471 because it is the largest group. At export time, the hint group had no ticket of its own.
+The submitted GitHub issues document each problem separately, with report IDs, counts, and the final outcomes above.
+The table describes the historical export, before those outcomes.
 
 ### Parser reads day-first dates as month-first
 
@@ -48,8 +60,8 @@ Form reports from tenants on `booking-v2` also belong here because its `DD/MM/YY
 R-41200 from Harbour Dental gives the 7 April to 4 July example. R-41205 is another parser report,
 even though intake guessed `hint` from an `en-US` browser. Its tenant, Morrow Tax, uses `fr-FR` and `booking-v2`.
 
-Engineering needs to parse dates using the tenant's date convention or an explicit unambiguous representation.
-Acceptance requires round trips for ambiguous day-first dates across app, email, and booking-v2 inputs.
+The required parser behavior is to preserve the tenant's date convention or accept an explicit unambiguous representation.
+The acceptance checks proposed by this investigation cover round trips for ambiguous day-first dates across app, email, and booking-v2 inputs.
 Include a month-first control and a day above 12 to catch fallback behavior. The export contains the desk's
 classifier, not the production parser, so these are proposed acceptance checks rather than a shipped patch.
 
@@ -62,9 +74,10 @@ but the tenant runs `booking-v3`, so this is a hint report.
 
 This problem affects form submissions from Alder Physio, Copper Studio, and Pale Harbour.
 App and email reports from those same tenants still belong to the parser group.
-Engineering needs to make the hint and the form's interpretation agree with the tenant locale.
-Acceptance requires a person following the displayed hint to get the intended date on booking-v3,
-with booking-v2 and month-first controls. A parser-only fix does not correct the form's misleading hint.
+While booking-v3 was in service, the hint and the form's interpretation needed to agree with the tenant locale.
+The proposed acceptance checks required a person following the displayed hint to get the intended date on booking-v3,
+with booking-v2 and month-first controls. A parser-only fix would not correct the form's misleading hint.
+The desk chose to retire this form rather than fix it.
 
 ## Counts come from the export, not the intake tags
 

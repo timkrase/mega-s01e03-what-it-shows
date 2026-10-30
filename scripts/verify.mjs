@@ -35,6 +35,9 @@ await withReview(async ({ review, causes, locales, cases, stamp }) => {
   const html = await readFile('rendered/4471-review.html', 'utf8');
   const expectedRef = stamp.deskRef(signature);
   assert.ok(html.includes(expectedRef), `Missing rendered signature ${expectedRef}`);
+  assert.ok(html.includes('closed as completed'));
+  assert.ok(html.includes('closed as not planned'));
+  assert.ok(html.includes('booking-v3</code> form was retired'));
   assert.match(html, /<strong>412<\/strong>/);
   assert.ok(/<td\b[^>]*><code>parser<\/code><\/td>\s*<td\b[^>]*>379<\/td>/.test(html), 'Rendered parser count must be 379');
   assert.ok(/<td\b[^>]*><code>hint<\/code><\/td>\s*<td\b[^>]*>33<\/td>/.test(html), 'Rendered hint count must be 33');

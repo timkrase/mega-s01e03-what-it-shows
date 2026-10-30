@@ -3,19 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="../../../_app/immutable/entry/start.B96DgohU.js" rel="modulepreload">
-		<link href="../../../_app/immutable/chunks/BXzJJ232.js" rel="modulepreload">
+    <link href="../../../_app/immutable/entry/start.DRnAjmE3.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/DIacSWoA.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/BvtQq18L.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/Vtj69CLk.js" rel="modulepreload">
-		<link href="../../../_app/immutable/entry/app.qtI8RuQx.js" rel="modulepreload">
+		<link href="../../../_app/immutable/entry/app.CYPwuHnP.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/Zc_7gvbP.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/BAZUJzKK.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/YR3vQIdZ.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/DfScvMYq.js" rel="modulepreload">
 		<link href="../../../_app/immutable/nodes/0.q1tR7LMV.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/BBV0tCDE.js" rel="modulepreload">
-		<link href="../../../_app/immutable/nodes/5.BRsBLXhI.js" rel="modulepreload">
-		<link href="../../../_app/immutable/chunks/ByjpdKtt.js" rel="modulepreload">
+		<link href="../../../_app/immutable/nodes/5.Bb1mRf2X.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/FAqG_5qF.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/DCKhHR8-.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/tyiOZ9to.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/mGPV4_NW.js" rel="modulepreload">
@@ -30,21 +30,26 @@
   </head>
   <body data-sveltekit-preload-data="hover">
     <div style="display: contents"><!--[--><!--[0--><!--[--><!--[--><div class="kb svelte-e2jw2j"><header><a class="crumb svelte-e2jw2j" href="/kb">support desk · kb</a> <h1 class="svelte-e2jw2j">0002 · Split #4471 and deduplicate by cause</h1> <p class="meta svelte-e2jw2j"><span>owner <b>Tim Krase and Codex</b></span> <span class="status proposed svelte-e2jw2j">proposed</span> <span class="svelte-e2jw2j">reviewed 2026-10-30 · 0 days ago</span></p></header> <!--[-1--><!--]--> <main><p>The desk merged different date problems into #4471. Its "known, one issue, one fix" summary
-does not match the report groups below. This proposal replaces the subject-only rule in <a href="/kb/decisions/0001-dedupe-by-subject/">decision 0001</a>. That accepted record remains unchanged.</p> <aside class="warn svelte-17bri61"><!---->This is a proposal for the support desk. It does not say that engineering shipped either fix.
-The export ends on 4 October 2026. Recheck new reports before applying its counts to the live queue.<!----></aside><!----> <h2>Two problems were merged together</h2> <div class="cause-table svelte-130jawv" role="region" aria-label="Cause counts, scroll horizontally on small screens" tabindex="0"><p class="sum svelte-12oyimm"><strong>412</strong> reports merged into #4471 · <strong>2</strong> causes</p> <table><thead><tr><th>cause</th><th>reports</th><th>tagged as</th><th>tenants</th><th>seen</th><th></th></tr></thead><tbody><!--[--><tr class="svelte-12oyimm"><td class="svelte-12oyimm"><code>parser</code></td><td class="svelte-12oyimm">379</td><td class="tags svelte-12oyimm">parser ×356 · hint ×23</td><td class="svelte-12oyimm">11</td><td class="svelte-12oyimm">2026-04-01 → 2026-10-04</td><td class="svelte-12oyimm">#4471</td></tr><tr class="svelte-12oyimm wrong"><td class="svelte-12oyimm"><code>hint</code></td><td class="svelte-12oyimm">33</td><td class="tags svelte-12oyimm">hint ×18 · parser ×15</td><td class="svelte-12oyimm">3</td><td class="svelte-12oyimm">2026-04-17 → 2026-09-22</td><td class="svelte-12oyimm">not this ticket — no ticket of its own</td></tr><!--]--></tbody></table> <!--[--><!--[0--><p class="note svelte-12oyimm">5 reports read as a one-day move; filed under <code>parser</code> by tenant.</p><!--]--><!--[-1--><!--]--><!--]--><!----></div> <p>The parser group owns #4471 because it is the largest group. The hint group needs a separate ticket.
-The submitted GitHub issues document each problem separately, with report IDs and counts.</p> <h3>Parser reads day-first dates as month-first</h3> <p>The shared parser always reads month first. In a day-first tenant, an ambiguous date such as <code>07/04/2026</code>, intended as 7 April, becomes 4 July. App and email reports use this path.
+does not match the report groups below. This proposal replaces the subject-only rule in <a href="/kb/decisions/0001-dedupe-by-subject/">decision 0001</a>. That accepted record remains unchanged.</p> <aside class="warn svelte-17bri61"><!---->This triage policy is a proposal for the support desk. The report export ends on 4 October 2026.
+The course has since published the engineering outcomes below. Keep those outcomes separate from the historical report counts.<!----></aside><!----> <h2>Engineering update after the export</h2> <p>The <a href="https://hq.mega.dev/challenges/what-it-shows" rel="nofollow">challenge page</a> now reports that #4471 closed on 5 October 2026.
+The parser is <strong>fixed</strong>, with the change described as <code>fix(dates): parse dd/mm for eu locales</code>. <a href="https://github.com/timkrase/mega-s01e03-what-it-shows/issues/1" rel="nofollow">Parser ticket #1</a> is closed as completed.</p> <p>The hint issue is <strong>won't fix</strong> because the <code>booking-v3</code> form was retired. <a href="https://github.com/timkrase/mega-s01e03-what-it-shows/issues/2" rel="nofollow">Hint ticket #2</a> is closed as not planned.
+Retiring the form does not mean its hint was repaired. These outcomes come from the course's engineering update,
+not from testing production code in this export.</p> <h2>Two problems were merged together</h2> <div class="cause-table svelte-130jawv" role="region" aria-label="Cause counts, scroll horizontally on small screens" tabindex="0"><p class="sum svelte-12oyimm"><strong>412</strong> reports merged into #4471 · <strong>2</strong> causes</p> <table><thead><tr><th>cause</th><th>reports</th><th>tagged as</th><th>tenants</th><th>seen</th><th></th></tr></thead><tbody><!--[--><tr class="svelte-12oyimm"><td class="svelte-12oyimm"><code>parser</code></td><td class="svelte-12oyimm">379</td><td class="tags svelte-12oyimm">parser ×356 · hint ×23</td><td class="svelte-12oyimm">11</td><td class="svelte-12oyimm">2026-04-01 → 2026-10-04</td><td class="svelte-12oyimm">#4471</td></tr><tr class="svelte-12oyimm wrong"><td class="svelte-12oyimm"><code>hint</code></td><td class="svelte-12oyimm">33</td><td class="tags svelte-12oyimm">hint ×18 · parser ×15</td><td class="svelte-12oyimm">3</td><td class="svelte-12oyimm">2026-04-17 → 2026-09-22</td><td class="svelte-12oyimm">not this ticket — no ticket of its own</td></tr><!--]--></tbody></table> <!--[--><!--[0--><p class="note svelte-12oyimm">5 reports read as a one-day move; filed under <code>parser</code> by tenant.</p><!--]--><!--[-1--><!--]--><!--]--><!----></div> <p>The parser group owns #4471 because it is the largest group. At export time, the hint group had no ticket of its own.
+The submitted GitHub issues document each problem separately, with report IDs, counts, and the final outcomes above.
+The table describes the historical export, before those outcomes.</p> <h3>Parser reads day-first dates as month-first</h3> <p>The shared parser always reads month first. In a day-first tenant, an ambiguous date such as <code>07/04/2026</code>, intended as 7 April, becomes 4 July. App and email reports use this path.
 Form reports from tenants on <code>booking-v2</code> also belong here because its <code>DD/MM/YYYY</code> hint agrees with their locale.</p> <p>R-41200 from Harbour Dental gives the 7 April to 4 July example. R-41205 is another parser report,
-even though intake guessed <code>hint</code> from an <code>en-US</code> browser. Its tenant, Morrow Tax, uses <code>fr-FR</code> and <code>booking-v2</code>.</p> <p>Engineering needs to parse dates using the tenant's date convention or an explicit unambiguous representation.
-Acceptance requires round trips for ambiguous day-first dates across app, email, and booking-v2 inputs.
+even though intake guessed <code>hint</code> from an <code>en-US</code> browser. Its tenant, Morrow Tax, uses <code>fr-FR</code> and <code>booking-v2</code>.</p> <p>The required parser behavior is to preserve the tenant's date convention or accept an explicit unambiguous representation.
+The acceptance checks proposed by this investigation cover round trips for ambiguous day-first dates across app, email, and booking-v2 inputs.
 Include a month-first control and a day above 12 to catch fallback behavior. The export contains the desk's
 classifier, not the production parser, so these are proposed acceptance checks rather than a shipped patch.</p> <h3>Booking-v3 prints the wrong hint for day-first tenants</h3> <p><code>booking-v3</code> prints <code>MM/DD/YYYY</code>, but the form reads dates in the tenant's day-first order.
 A person follows the hint and types <code>01/06/2026</code> for 6 January. The form reads 1 June.
 R-41230 reports that result at Copper Studio. Its browser is <code>en-GB</code> and intake guessed <code>parser</code>,
 but the tenant runs <code>booking-v3</code>, so this is a hint report.</p> <p>This problem affects form submissions from Alder Physio, Copper Studio, and Pale Harbour.
 App and email reports from those same tenants still belong to the parser group.
-Engineering needs to make the hint and the form's interpretation agree with the tenant locale.
-Acceptance requires a person following the displayed hint to get the intended date on booking-v3,
-with booking-v2 and month-first controls. A parser-only fix does not correct the form's misleading hint.</p> <h2>Counts come from the export, not the intake tags</h2> <section aria-label="Export audit"><p><strong>427</strong> export rows contain <strong>412</strong> distinct reports for #4471.
+While booking-v3 was in service, the hint and the form's interpretation needed to agree with the tenant locale.
+The proposed acceptance checks required a person following the displayed hint to get the intended date on booking-v3,
+with booking-v2 and month-first controls. A parser-only fix would not correct the form's misleading hint.
+The desk chose to retire this form rather than fix it.</p> <h2>Counts come from the export, not the intake tags</h2> <section aria-label="Export audit"><p><strong>427</strong> export rows contain <strong>412</strong> distinct reports for #4471.
     The <strong>15</strong> repeated rows have the same IDs and contents. Count each report ID once.</p> <p>Tenant locale, form version, and channel place every report in a cause group.
     Intake tags disagree with those groups for <strong>38</strong> reports.</p> <table><caption>Classification from tenant data, compared with intake guesses</caption><thead><tr><th>Actual cause</th><th>Tagged parser</th><th>Tagged hint</th><th>Channels</th></tr></thead><tbody><!--[--><tr><td>parser</td><td>356</td><td>23</td><td>app: 204 · email: 150 · form: 25</td></tr><tr><td>hint</td><td>15</td><td>18</td><td>app: 0 · email: 0 · form: 33</td></tr><!--]--></tbody></table> <p><strong>183</strong> reports arrived before 2 July.
     The desk merged <strong>184</strong> reports on 2 July, including the earlier backlog.
@@ -64,15 +69,15 @@ compare its claims with the live tables, examples, and queue. Rebuild after repo
 			
 			<script>
 				{
-					__sveltekit_pqk2jg = {
+					__sveltekit_xqp6my = {
 						base: new URL("../../..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../../../_app/immutable/entry/start.B96DgohU.js"),
-						import("../../../_app/immutable/entry/app.qtI8RuQx.js")
+						import("../../../_app/immutable/entry/start.DRnAjmE3.js"),
+						import("../../../_app/immutable/entry/app.CYPwuHnP.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 5],

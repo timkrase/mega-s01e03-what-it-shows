@@ -2,7 +2,13 @@
 
 Covers **33 distinct reports** merged into source ticket #4471, from 2026-04-17 through 2026-09-22.
 
-This is a defect ticket derived from the MEGA.dev course support export. It is not a claim that a production fix was shipped.
+This ticket records the MEGA.dev course support export and the course's later engineering update.
+
+## Course-reported resolution
+
+The course engineering update reports #4471 closed on 5 October 2026. The hint issue is WON'T FIX because the booking-v3 form was retired. GitHub issue #2 is closed as not planned. Retirement is different from repairing the hint. The acceptance checks below record the investigation's original proposed fix criteria.
+
+Source: [the current engineering update](https://hq.mega.dev/challenges/what-it-shows).
 
 ## Scope and evidence
 
